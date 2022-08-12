@@ -66,7 +66,6 @@ export default class Sketch {
 
     this.renderer.render(this.scene, this.camera)
 
-    console.log(this.time)
     window.requestAnimationFrame(this.render.bind(this))
   }
 }
