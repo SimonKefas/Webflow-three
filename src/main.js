@@ -22,7 +22,7 @@ export default class Sketch {
       10
     )
     this.camera.position.z = 0.5
-    this.renderer = new THREE.WebGLRenderer({ antialias: true })
+    this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true})
 
     this.container.appendChild(this.renderer.domElement)
     this.controls = new OrbitControls(this.camera, this.renderer.domElement)
@@ -48,7 +48,7 @@ export default class Sketch {
 
   // add object
   addObject() {
-    this.geometry = new THREE.PlaneGeometry(0.5, 0.5, 20, 20)
+    this.geometry = new THREE.BoxGeometry(1, 1, 1)
     this.material = new THREE.RawShaderMaterial({
       vertexShader: vertexShader,
       fragmentShader: fragmentShader,
